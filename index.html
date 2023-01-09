@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/pin.png">
+    <title>Notizblock</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body onload="render()">
+        <div class="header">
+            <h2>Your Note</h2>
+            <img src="img/notice.png">
+        </div>
+        <div class="navbar">
+            <div class="navbar-links">
+            <a onclick="openNewNote()" href="#">Add new Note   <img src="img/pin.png"> </a>
+            <a onclick="render(), closeNewNote()" href="#">Notes   <img src="img/notice.png"> </a>
+            <a onclick="renderTrash()" href="#">Trash   <img src="img/trash.png"></a>
+            </div>
+            <div class="menu-icon">
+            <img src="img/menu.png" class="icon">
+            </div>
+        </div>
+        <div class="content">
+            <div class="newNote" id="newNote">
+                <div class="titleRow">
+                    <input class="textfield" type="text" placeholder="Title" id="title">
+                    <img onclick="addNotice()" src="img/pin.png">
+                </div>
+                <div class="titleRow">
+                    <textarea rows="3" class="textfield" type="text" placeholder="Take a note..." id="notice"></textarea>
+                    <a style="margin-left: 16px" href="#" id="closeNote" onclick="closeNewNote()">Close</a>
+                </div>
+            </div> 
+            <div id="notices" class="blankNotes">
+            </div>
+            <a style="margin-right: 64px" href="#" class="d-none" id="delete" onclick="deleteTrash()"><img src="img/trash.png"> Empty Trash</a>
+        </div>
+</body>
+</html>
